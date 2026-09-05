@@ -51,6 +51,8 @@ function initPetDemo() {
   const heroBody = document.getElementById('hero-body')
   const heroFace = document.getElementById('hero-face')
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
   let i = 1 // start on "shh", matching the design's default preview state
   let elapsed = 0
   let hover = false
@@ -80,15 +82,17 @@ function initPetDemo() {
 
   render()
 
-  setInterval(() => {
-    if (hover) return
-    elapsed += 200
-    if (elapsed >= STATES[i].ms) {
-      next()
-    } else {
-      render()
-    }
-  }, 200)
+  if (!reduceMotion) {
+    setInterval(() => {
+      if (hover) return
+      elapsed += 200
+      if (elapsed >= STATES[i].ms) {
+        next()
+      } else {
+        render()
+      }
+    }, 200)
+  }
 
   demo.addEventListener('mouseenter', () => {
     next()
@@ -98,6 +102,15 @@ function initPetDemo() {
     hover = false
   })
   demo.addEventListener('click', next)
+}
+
+function initStickyHeader() {
+  const header = document.getElementById('site-header')
+  if (!header) return
+
+  const update = () => header.classList.toggle('is-scrolled', window.scrollY > 4)
+  update()
+  window.addEventListener('scroll', update, { passive: true })
 }
 
 function initDownloadPlaceholders() {
@@ -112,4 +125,5 @@ function initDownloadPlaceholders() {
 }
 
 initPetDemo()
+initStickyHeader()
 initDownloadPlaceholders()
