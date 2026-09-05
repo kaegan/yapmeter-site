@@ -6,7 +6,7 @@
   --butter: #FFE27A;
   --mint: #7FE0A8;
   --sky: #8ED0FF;
-  --hairline: rgba(74, 44, 42, 0.1);
+  --hairline: rgba(74, 44, 42, 0.14);
   --muted: rgba(74, 44, 42, 0.72);
 }
 
@@ -14,7 +14,7 @@
 
 html, body {
   margin: 0;
-  background: #F3E8D8;
+  background: var(--milk);
   color: var(--cocoa);
   font-family: 'Nunito', sans-serif;
 }
@@ -22,38 +22,40 @@ html, body {
 a { color: var(--cocoa); }
 a:hover { color: var(--strawberry); }
 
-img, svg { display: block; max-width: 100%; }
-
-.page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(20px, 4vw, 64px) 0;
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--cocoa);
+  outline-offset: 3px;
 }
+
+img, svg { display: block; max-width: 100%; }
 
 .pad-x {
   padding-left: clamp(20px, 6vw, 80px);
   padding-right: clamp(20px, 6vw, 80px);
 }
 
-/* ---------- Hero card ---------- */
-
-.hero-card {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: var(--milk);
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(74, 44, 42, 0.12);
-  display: flex;
-  flex-direction: column;
-}
+/* ---------- Header ---------- */
 
 .site-header {
-  padding: clamp(18px, 3vw, 28px) clamp(20px, 6vw, 80px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--milk);
+  padding-top: clamp(18px, 3vw, 28px);
+  padding-bottom: clamp(18px, 3vw, 28px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--hairline);
+  box-shadow: 0 8px 24px rgba(74, 44, 42, 0.06);
 }
 
 .logo {
@@ -85,7 +87,15 @@ img, svg { display: block; max-width: 100%; }
 .btn:hover { background: var(--cocoa); color: var(--milk); }
 
 .btn-nav { font-size: 18px; padding: 12px 22px; }
-.btn-cta { font-size: clamp(18px, 2vw, 22px); padding: 16px 30px; }
+.btn-cta { font-size: clamp(18px, 2vw, 22px); padding: 18px 32px; }
+.download-cta { align-self: flex-start; }
+
+/* ---------- Page ---------- */
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .hero-body {
   padding: clamp(32px, 6vw, 64px) clamp(20px, 6vw, 80px) clamp(56px, 10vw, 112px);
@@ -202,7 +212,7 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(74, 44, 42, 0.5);
   text-align: center;
 }
 
@@ -225,6 +235,10 @@ img, svg { display: block; max-width: 100%; }
   transition: transform 0.35s cubic-bezier(.34,1.56,.64,1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .pet-hero-svg { transition: none; }
+}
+
 /* ---------- Body sections ---------- */
 
 .section {
@@ -238,6 +252,7 @@ img, svg { display: block; max-width: 100%; }
   gap: 12px;
   margin-bottom: clamp(28px, 6vw, 48px);
 }
+.section-lede-tight { margin-bottom: 20px; }
 
 h2.section-h {
   margin: 0;
@@ -247,6 +262,7 @@ h2.section-h {
   line-height: 1.05;
   letter-spacing: -0.01em;
 }
+h2.section-h-sm { font-size: clamp(24px, 3vw, 32px); }
 
 .section-p {
   margin: 0;
@@ -330,6 +346,7 @@ h2.section-h {
 
 .perm-card {
   padding: 20px 22px;
+  border-radius: 20px;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -377,7 +394,14 @@ h2.section-h {
 .faq-q { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 22px; }
 .faq-a { margin: 0; font-size: 17px; line-height: 1.55; text-wrap: pretty; }
 
+/* ---------- Footer ---------- */
+
 .site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--hairline);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -390,11 +414,3 @@ h2.section-h {
 .footer-brand svg { width: 20px; height: 20px; overflow: visible; }
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-links a { font-weight: 700; text-decoration: none; }
-
-.btn-disabled {
-  opacity: 1;
-  position: relative;
-}
-.btn-disabled[data-armed="false"] {
-  cursor: default;
-}
