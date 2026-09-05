@@ -11,13 +11,13 @@ const L = 'M5.15 13.629A6.5 6.5 0 1 0 2.771 11.25L1.2 15.2Z'
 const R = 'M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z'
 
 const STATES = [
-  { id: 'asleep', color: '#4A2C2A', bar: '#F5F5F7', body: L, line: 'zzz', ms: 1400 },
+  { id: 'asleep', color: '#4A2C2A', bar: '#F5F5F7', body: L, line: 'Meeting adjourned. Zzz…', ms: 1400 },
   { id: 'shh', color: '#FF5C7A', body: L, line: 'Shh. Their turn.', ms: 2000 },
-  { id: 'peek', color: '#FFE27A', body: L, line: 'Peeking.', ms: 1200 },
+  { id: 'peek', color: '#FFE27A', body: L, line: 'There’s a yap gap.', ms: 1200 },
   { id: 'go', color: '#7FE0A8', body: R, line: 'Go.', ms: 1800 },
-  { id: 'fresh', color: '#8ED0FF', body: R, line: 'Yap yap yap.', ms: 4500, clockStart: 38 },
-  { id: 'tiring', color: '#8ED0FF', body: R, line: 'Yap yap yap.', ms: 2200, clockStart: 134 },
-  { id: 'full', color: '#8ED0FF', body: R, line: "I'm full.", ms: 2400, clockStart: 271 },
+  { id: 'fresh', color: '#8ED0FF', body: R, line: 'You’ve been yapping for a bit now…', ms: 4500, clockStart: 38 },
+  { id: 'tiring', color: '#8ED0FF', body: R, line: 'You’ve been yapping for a bit now…', ms: 2200, clockStart: 134 },
+  { id: 'full', color: '#8ED0FF', body: R, line: "That’s a lot of yapping.", ms: 2400, clockStart: 271 },
 ]
 
 const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
