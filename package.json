@@ -1,0 +1,19 @@
+{
+  "name": "yapmeter-site",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "posthog-js": "^1.364.7"
+  },
+  "devDependencies": {
+    "vite": "^8.0.1"
+  }
+}

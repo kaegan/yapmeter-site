@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yapmeter | Knows Whose Turn It Is</title>
+    <meta name="description" content="A tiny pet in your menu bar. Red while someone else is talking, green when they've finished, and a clock while it's you." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yapmeter.com/" />
+    <meta property="og:title" content="Yapmeter | Knows Whose Turn It Is" />
+    <meta property="og:description" content="A tiny pet in your menu bar. Red while someone else is talking, green when they've finished, and a clock while it's you." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Yapmeter | Knows Whose Turn It Is" />
+    <meta name="twitter:description" content="A tiny pet in your menu bar. Red while someone else is talking, green when they've finished, and a clock while it's you." />
+    <meta name="theme-color" content="#F3E8D8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_AUrkittVM6MeGMKDPF4sebuniygNnwZoPRsx3CA4QaWA', {
+        api_host: 'https://us.i.posthog.com',
+        person_profiles: 'anonymous'
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="hero-card">
+        <header class="site-header pad-x">
+          <div class="logo">
+            <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#4A2C2A"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><path d="M5.9 9.9Q8.4 12.6 10.9 9.9" fill="none" stroke="#FFF6EA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+            <span>Yapmeter</span>
+          </div>
+          <a href="#download" class="btn btn-nav js-download-cta">Download</a>
+        </header>
+
+        <div class="hero-body pad-x">
+          <div class="hero-copy">
+            <h1 class="hero-h1">Meet Yap.</h1>
+            <div class="hero-sub">He'll help you <span class="pill pill-mint">yap more</span> or <span class="pill pill-strawberry">yap less</span> during meetings.</div>
+            <p class="hero-p">A tiny pet in your menu bar. Red while someone else is talking, green when they've finished, and a clock while it's you.</p>
+            <div class="cta-stack">
+              <a href="#download" class="btn btn-cta js-download-cta">Download for Mac</a>
+              <div class="cta-note">Free for now &middot; macOS 14.2 or later</div>
+            </div>
+          </div>
+
+          <div class="pet-demo" id="pet-demo">
+            <div class="menubar-strip">
+              <div class="menubar-bar">
+                <div class="menubar-glyph">
+                  <svg viewBox="0 0 16 16" id="menubar-svg">
+                    <path id="menubar-body" d=""></path>
+                    <g id="menubar-face"></g>
+                  </svg>
+                  <span class="menubar-clock" id="menubar-clock"></span>
+                </div>
+                <span class="menubar-time">Thu 10:42</span>
+              </div>
+              <div class="menubar-caption">Actual size, in your menu bar</div>
+            </div>
+            <div class="pet-line" id="pet-line"></div>
+            <svg viewBox="0 0 16 16" class="pet-hero-svg" id="hero-svg">
+              <path id="hero-body" d=""></path>
+              <g id="hero-face"></g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="section pad-x">
+          <div class="section-lede">
+            <h2 class="section-h">He knows whose turn it is.</h2>
+            <p class="section-p">Nothing to press. When a meeting app has your mic, Yap wakes up. When the call ends, he goes back to sleep.</p>
+          </div>
+          <div class="states-grid">
+            <div class="card state-card">
+              <svg viewBox="0 0 16 16"><path d="M5.15 13.629A6.5 6.5 0 1 0 2.771 11.25L1.2 15.2Z" fill="#FF5C7A"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><rect x="6.3" y="9.8" width="4.2" height="1.7" rx=".85" fill="#FFF6EA"></rect></svg>
+              <div class="state-title">Shh. Their turn.</div>
+              <p class="state-p">Red while someone else has the floor.</p>
+            </div>
+            <div class="card state-card">
+              <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#7FE0A8"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><path d="M5.9 9.9Q8.4 12.6 10.9 9.9" fill="none" stroke="#FFF6EA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+              <div class="state-title">Go.</div>
+              <p class="state-p">Green when they've really stopped, not just paused for breath.</p>
+            </div>
+            <div class="card state-card">
+              <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#8ED0FF"></path><path d="M5 7.7Q6.3 6.2 7.6 7.7M9.2 7.7Q10.5 6.2 11.8 7.7" fill="none" stroke="#FFF6EA" stroke-width="1.2" stroke-linecap="round"></path><path d="M5.6 9.6H11.2C11.2 13.6 5.6 13.6 5.6 9.6Z" fill="#FFF6EA"></path></svg>
+              <div class="state-title">Yap. 0:42.</div>
+              <p class="state-p">Blue, with a clock, while it's you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section pad-x">
+          <div class="section-lede">
+            <h2 class="section-h">Two kinds of people download this.</h2>
+          </div>
+          <div class="kinds-grid">
+            <div class="card kind-card">
+              <svg viewBox="0 0 16 16"><g transform="translate(8.4 8) scale(1.14) translate(-8.4 -8)"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#8ED0FF"></path><path d="M5 7.3Q6.3 8.6 7.6 7.3M9.2 7.3Q10.5 8.6 11.8 7.3" fill="none" stroke="#FFF6EA" stroke-width="1.2" stroke-linecap="round"></path><path d="M6.4 10.8H10.4" fill="none" stroke="#FFF6EA" stroke-width="1.4" stroke-linecap="round"></path></g></svg>
+              <div class="kind-title">You worry you talk too much.</div>
+              <p class="kind-p">The clock is for you. It counts from the moment you start, and at four minutes he gives you a look.</p>
+              <div class="kind-tag">I'm full. 4:32</div>
+            </div>
+            <div class="card kind-card">
+              <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#7FE0A8"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><path d="M5.9 9.9Q8.4 12.6 10.9 9.9" fill="none" stroke="#FFF6EA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+              <div class="kind-title">You never find the gap.</div>
+              <p class="kind-p">The green light is for you. When they've really stopped, not just paused for breath, he smiles.</p>
+              <div class="kind-tag">Go.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section pad-x">
+          <div class="privacy-grid">
+            <div class="privacy-copy">
+              <svg viewBox="0 0 16 16"><path d="M5.15 13.629A6.5 6.5 0 1 0 2.771 11.25L1.2 15.2Z" fill="#4A2C2A"></path><path d="M5 7.3Q6.3 8.6 7.6 7.3M9.2 7.3Q10.5 8.6 11.8 7.3" fill="none" stroke="#FFF6EA" stroke-width="1.2" stroke-linecap="round"></path></svg>
+              <h2 class="privacy-h">He hears that you're talking, not what you're saying.</h2>
+              <p class="privacy-p">Yapmeter only checks whether there's speech-shaped sound, yours or theirs. It never records, never transcribes, and never sends anything anywhere. It starts when a meeting app has your mic and stops listening the moment the call ends.</p>
+            </div>
+            <div class="perm-list">
+              <div class="perm-label">Two permissions, asked on your first call</div>
+              <div class="card perm-card">
+                <svg viewBox="0 0 16 16"><path d="M5.15 13.629A6.5 6.5 0 1 0 2.771 11.25L1.2 15.2Z" fill="#FF5C7A"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><rect x="6.3" y="9.8" width="4.2" height="1.7" rx=".85" fill="#FFF6EA"></rect></svg>
+                <div>
+                  <div class="perm-title">System Audio Recording</div>
+                  <p class="perm-p">To hear the other people. It's the only way macOS lets an app do that.</p>
+                </div>
+              </div>
+              <div class="card perm-card">
+                <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#8ED0FF"></path><path d="M5 7.7Q6.3 6.2 7.6 7.7M9.2 7.7Q10.5 6.2 11.8 7.7" fill="none" stroke="#4A2C2A" stroke-width="1.2" stroke-linecap="round"></path><path d="M5.6 9.6H11.2C11.2 13.6 5.6 13.6 5.6 9.6Z" fill="#FFF6EA"></path></svg>
+                <div>
+                  <div class="perm-title">Microphone</div>
+                  <p class="perm-p">To time you. Say no and the signal still works; you just lose the clock.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section pad-x">
+          <div class="section-lede" style="margin-bottom:20px">
+            <h2 class="section-h" style="font-size:clamp(24px,3vw,32px)">Works with</h2>
+          </div>
+          <div class="works-with">
+            <span class="works-pill">Zoom</span>
+            <span class="works-pill">Google Meet</span>
+            <span class="works-pill">Slack huddles</span>
+            <span class="works-pill">FaceTime</span>
+            <span class="works-pill">Discord</span>
+            <span class="works-etc">and anything else that opens your mic.</span>
+          </div>
+        </div>
+
+        <div class="section pad-x" id="download">
+          <div class="download-card">
+            <div class="download-copy">
+              <h2 class="section-h">Adopt one.</h2>
+              <a href="#download" class="btn btn-cta js-download-cta" style="align-self:flex-start">Download for Mac</a>
+              <div class="cta-note">Free for now &middot; macOS 14.2 or later &middot; Mac only</div>
+            </div>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-q">Does it record me?</div>
+                <p class="faq-a">No. It never stores or transcribes audio. It checks whether there's speech, then forgets.</p>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q">Why System Audio Recording?</div>
+                <p class="faq-a">That's the only way macOS lets an app hear the other people on your call. It's only used while a meeting app has your mic open.</p>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q">Does it know if I'm muted?</div>
+                <p class="faq-a">No. macOS doesn't tell apps that. If you're muted and talking anyway, the clock still runs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section pad-x">
+          <footer class="site-footer">
+            <div class="footer-brand">
+              <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#4A2C2A"></path><circle cx="6.2" cy="7.2" r="1.05" fill="#FFF6EA"></circle><circle cx="10.6" cy="7.2" r="1.05" fill="#FFF6EA"></circle><path d="M5.9 9.9Q8.4 12.6 10.9 9.9" fill="none" stroke="#FFF6EA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+              <span>Made by one person and a very small pet.</span>
+            </div>
+            <div class="footer-links">
+              <a href="https://github.com/kaegan/yapmeter">GitHub</a>
+              <a href="#">Help</a>
+              <a href="#">Release notes</a>
+              <a href="#">Privacy</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
