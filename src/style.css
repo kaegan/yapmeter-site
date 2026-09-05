@@ -226,7 +226,16 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 600;
   font-size: clamp(20px, 2.6vw, 26px);
   min-width: 120px;
+  max-width: 100%;
   text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .pet-line {
+    font-size: clamp(14px, 4.2vw, 20px);
+    padding: 10px 18px;
+  }
 }
 
 .pet-hero-svg {
