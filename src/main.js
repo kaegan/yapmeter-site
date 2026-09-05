@@ -14,8 +14,8 @@ const STATES = [
   { id: 'asleep', color: '#4A2C2A', bar: '#F5F5F7', body: L, line: 'Meeting adjourned. Zzz…', ms: 1400 },
   { id: 'shh', color: '#FF5C7A', body: L, line: 'Shh. Their turn.', ms: 2000 },
   { id: 'peek', color: '#FFE27A', body: L, line: 'There’s a yap gap.', ms: 1200 },
-  { id: 'go', color: '#7FE0A8', body: R, line: 'Go.', ms: 1800 },
-  { id: 'fresh', color: '#8ED0FF', body: R, line: 'You’ve been yapping for a bit now…', ms: 4500, clockStart: 38 },
+  { id: 'go', color: '#7FE0A8', body: R, line: 'Time to yap!', ms: 1800 },
+  { id: 'fresh', color: '#8ED0FF', body: R, line: 'You’re yapping!', ms: 4500, clockStart: 38, pillClock: false },
   { id: 'tiring', color: '#8ED0FF', body: R, line: 'You’ve been yapping for a bit now…', ms: 2200, clockStart: 134 },
   { id: 'full', color: '#8ED0FF', body: R, line: "That’s a lot of yapping.", ms: 2400, clockStart: 271 },
 ]
@@ -66,7 +66,7 @@ function initPetDemo() {
     menubarFace.innerHTML = facePaths(st.id, '#1E1E20', { wrapFull: true })
     menubarClock.textContent = clock
 
-    petLine.textContent = clock ? `${st.line} ${clock}` : st.line
+    petLine.textContent = clock && st.pillClock !== false ? `${st.line} ${clock}` : st.line
 
     heroBody.setAttribute('d', st.body)
     heroBody.setAttribute('fill', st.color)
