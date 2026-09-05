@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/((?!.*\\..*).*)", "destination": "/index.html" }
+    {
+      "source": "/appcast.xml",
+      "destination": "https://github.com/kaegan/yapmeter/releases/latest/download/appcast.xml"
+    },
+    {
+      "source": "/((?!.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ]
 }
