@@ -1,0 +1,49 @@
+<!--
+  Source for public/og-image.png (the iMessage / social link preview).
+  Regenerate after editing:
+
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --hide-scrollbars \
+    --window-size=1200,630 --force-device-scale-factor=2 --virtual-time-budget=6000 \
+    --screenshot=/tmp/og2x.png "file://$PWD/scripts/og-image.html" && sips -z 630 1200 /tmp/og2x.png --out public/og-image.png
+
+  Needs network access for the Google Fonts (Fredoka / Nunito) the page uses.
+-->
+<!doctype html><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--milk:#FFF6EA;--card:#FFFDF8;--cocoa:#4A2C2A;--strawberry:#FF5C7A;--butter:#FFE27A;--mint:#7FE0A8;--sky:#8ED0FF;--hairline:rgba(74,44,42,.14);--muted:rgba(74,44,42,.72)}
+  html,body{margin:0}
+  body{width:1200px;height:630px;overflow:hidden;background:var(--milk);color:var(--cocoa);font-family:'Nunito',sans-serif;position:relative}
+  .copy{position:absolute;left:84px;top:0;height:630px;display:flex;flex-direction:column;justify-content:center;gap:26px;width:700px}
+  .logo{display:flex;align-items:center;gap:12px;font-family:'Fredoka',sans-serif;font-weight:700;font-size:30px;margin-bottom:12px}
+  .logo svg{width:36px;height:36px;overflow:visible}
+  h1{margin:0;font-family:'Fredoka',sans-serif;font-weight:700;font-size:124px;line-height:.95;letter-spacing:-.02em}
+  .sub{font-family:'Fredoka',sans-serif;font-weight:600;font-size:37px;line-height:1.4;letter-spacing:-.01em;max-width:700px}
+  .pill{border-radius:12px;padding:0 12px;white-space:nowrap}
+  .pill-mint{background:var(--mint)}.pill-strawberry{background:var(--strawberry)}
+  .p{font-size:23px;line-height:1.45;color:var(--muted);font-weight:600;max-width:520px;margin-top:4px}
+  .pet{position:absolute;right:88px;top:0;height:630px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding-top:4px}
+  .glow{position:absolute;right:24px;top:92px;width:470px;height:470px;border-radius:50%;background:var(--card);border:1.5px solid var(--hairline)}
+  .bar{position:relative;height:38px;border-radius:10px;background:#1E1E20;display:flex;align-items:center;gap:20px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif;font-size:17px;color:#F5F5F7;box-shadow:0 10px 28px rgba(74,44,42,.14)}
+  .bar .g{display:flex;align-items:center;gap:7px}
+  .bar svg{width:26px;height:26px;overflow:visible}
+  .bar .t{opacity:.6}
+  .hero{position:relative;width:330px;height:330px;overflow:visible;filter:drop-shadow(0 14px 22px rgba(74,44,42,.14))}
+</style>
+<div class="glow"></div>
+<div class="copy">
+  <div class="logo">
+    <svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#4A2C2A"/><path d="M5 7.7Q6.3 6.2 7.6 7.7M9.2 7.7Q10.5 6.2 11.8 7.7" fill="none" stroke="#FFF6EA" stroke-width="1.2" stroke-linecap="round"/><path d="M5.6 9.6H11.2C11.2 13.6 5.6 13.6 5.6 9.6Z" fill="#FFF6EA"/></svg>
+    Yapmeter
+  </div>
+  <h1>Meet Yap.</h1>
+  <div class="sub">He'll help you <span class="pill pill-mint">yap more</span> or <span class="pill pill-strawberry">yap less</span> during meetings.</div>
+  <div class="p">A tiny pet in your menu bar that knows whose turn it is.</div>
+</div>
+<div class="pet">
+  <div class="bar">
+    <div class="g"><svg viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#8ED0FF"/><path d="M5 7.7Q6.3 6.2 7.6 7.7M9.2 7.7Q10.5 6.2 11.8 7.7" fill="none" stroke="#1E1E20" stroke-width="1.2" stroke-linecap="round"/><path d="M5.6 9.6H11.2C11.2 13.6 5.6 13.6 5.6 9.6Z" fill="#1E1E20"/></svg><span>0:42</span></div>
+    <span class="t">Thu 10:42</span>
+  </div>
+  <svg class="hero" viewBox="0 0 16 16"><path d="M11.65 13.629A6.5 6.5 0 1 1 14.029 11.25L15.6 15.2Z" fill="#8ED0FF"/><path d="M5 7.7Q6.3 6.2 7.6 7.7M9.2 7.7Q10.5 6.2 11.8 7.7" fill="none" stroke="#FFF6EA" stroke-width="1.2" stroke-linecap="round"/><path d="M5.6 9.6H11.2C11.2 13.6 5.6 13.6 5.6 9.6Z" fill="#FFF6EA"/></svg>
+</div>
