@@ -5,6 +5,10 @@ import { injectSpeedInsights } from '@vercel/speed-insights'
 inject()
 injectSpeedInsights()
 
+// Hand-updated per release — see README for why.
+const CURRENT_VERSION = 'v0.1.2'
+const DOWNLOAD_URL = 'https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.zip'
+
 // --- Pet state machine, ported from the Yapmeter Landing design canvas ---
 
 const L = 'M5.15 13.629A6.5 6.5 0 1 0 2.771 11.25L1.2 15.2Z'
@@ -113,17 +117,19 @@ function initStickyHeader() {
   window.addEventListener('scroll', update, { passive: true })
 }
 
-function initDownloadPlaceholders() {
-  // No build to ship yet — keep the CTAs inert until there's a real release.
+function initDownloadCtas() {
   document.querySelectorAll('.js-download-cta').forEach((el) => {
-    el.addEventListener('click', (e) => {
-      e.preventDefault()
-      if (window.posthog) window.posthog.capture('download_click_placeholder')
-      document.getElementById('download')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    el.href = DOWNLOAD_URL
+    el.addEventListener('click', () => {
+      if (window.posthog) window.posthog.capture('download_click')
     })
+  })
+
+  document.querySelectorAll('.js-cta-version').forEach((el) => {
+    el.textContent = CURRENT_VERSION
   })
 }
 
 initPetDemo()
 initStickyHeader()
-initDownloadPlaceholders()
+initDownloadCtas()

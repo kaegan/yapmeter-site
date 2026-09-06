@@ -168,6 +168,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .cta-note { font-size: 15px; color: var(--muted); }
+.download-after { font-size: 15px; color: var(--muted); margin: 0; }
 
 /* ---------- Pet demo ---------- */
 
