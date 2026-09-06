@@ -109,6 +109,7 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 860px) {
   .hero-body {
     grid-template-columns: 1fr;
+    gap: 24px;
     text-align: center;
   }
 }
@@ -120,7 +121,19 @@ img, svg { display: block; max-width: 100%; }
 }
 
 @media (max-width: 860px) {
-  .hero-copy { align-items: center; }
+  .hero-copy {
+    /* .hero-copy's children become direct grid items of .hero-body so they
+       can be interleaved with .pet-demo via `order`, without changing DOM
+       order (keeps tab order / screen-reader order untouched). This
+       overrides `display: flex` above, so this rule must come after it. */
+    display: contents;
+  }
+
+  .hero-h1 { order: 1; }
+  .hero-sub { order: 2; }
+  .pet-demo { order: 3; }
+  .hero-p { order: 4; }
+  .cta-stack { order: 5; }
 }
 
 .hero-h1 {
