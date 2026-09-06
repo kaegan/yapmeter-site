@@ -98,13 +98,15 @@ function initPetDemo() {
     }, 200)
   }
 
-  demo.addEventListener('mouseenter', () => {
-    next()
-    hover = true
-  })
-  demo.addEventListener('mouseleave', () => {
-    hover = false
-  })
+  const canHover = window.matchMedia('(hover: hover)').matches
+  if (canHover) {
+    demo.addEventListener('mouseenter', () => {
+      hover = true
+    })
+    demo.addEventListener('mouseleave', () => {
+      hover = false
+    })
+  }
   demo.addEventListener('click', next)
 }
 
