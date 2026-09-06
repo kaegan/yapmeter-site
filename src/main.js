@@ -5,9 +5,9 @@ import { injectSpeedInsights } from '@vercel/speed-insights'
 inject()
 injectSpeedInsights()
 
-// Hand-updated per release — see README for why.
-const CURRENT_VERSION = 'v0.1.2'
-const DOWNLOAD_URL = 'https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.zip'
+// Bumped by the app repo's `release` skill on every release — see README for why.
+const CURRENT_VERSION = 'v0.2.3'
+const DOWNLOAD_URL = 'https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.dmg'
 
 // --- Pet state machine, ported from the Yapmeter Landing design canvas ---
 
