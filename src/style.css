@@ -227,7 +227,7 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(74, 44, 42, 0.5);
+  color: var(--muted);
   text-align: center;
 }
 
@@ -329,6 +329,7 @@ h2.section-h-sm { font-size: clamp(24px, 3vw, 32px); }
   text-align: center;
 }
 .state-card svg { width: 72px; height: 72px; overflow: visible; }
+.state-title, .kind-title, .faq-q, .perm-title { margin: 0; }
 .state-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.1; }
 .state-p { margin: 0; font-size: 17px; line-height: 1.5; text-wrap: pretty; }
 

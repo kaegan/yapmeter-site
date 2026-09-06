@@ -108,6 +108,12 @@ function initPetDemo() {
     })
   }
   demo.addEventListener('click', next)
+  demo.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      if (e.key !== 'Enter') e.preventDefault()
+      next()
+    }
+  })
 }
 
 function initStickyHeader() {
