@@ -13,7 +13,7 @@ npm run dev
 ## Release version
 
 The download button links to
-`https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.zip`,
+`https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.dmg`,
 which GitHub always resolves to the newest release, so the link itself never
 needs updating.
 

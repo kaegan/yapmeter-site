@@ -7,7 +7,7 @@ injectSpeedInsights()
 
 // Hand-updated per release — see README for why.
 const CURRENT_VERSION = 'v0.1.2'
-const DOWNLOAD_URL = 'https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.zip'
+const DOWNLOAD_URL = 'https://github.com/kaegan/yapmeter/releases/latest/download/Yapmeter.dmg'
 
 // --- Pet state machine, ported from the Yapmeter Landing design canvas ---
 
